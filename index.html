@@ -153,7 +153,7 @@ function chosen(){return products.map(([id,name])=>({id,name,quantity:Number(doc
 function refreshSummary(){
  const items=chosen(), total=items.reduce((n,p)=>n+p.quantity,0);
  document.getElementById("count").textContent=total+" नग/पॅक";
- document.getElementById("summary").textContent=items.length?items.map(p=>"• "+p.name+" — "+p.quantity+" (नग/पॅक)").join("\\n"):"अजून कोणताही पदार्थ निवडलेला नाही.";
+ document.getElementById("summary").textContent=items.length?items.map(p=>"• "+p.name+" — "+p.quantity+" (नग/पॅक)").join("\n"):"अजून कोणताही पदार्थ निवडलेला नाही.";
 }
 products.forEach(([id])=>document.getElementById(id).addEventListener("change",refreshSummary));
 document.getElementById("year").textContent=new Date().getFullYear();
@@ -192,8 +192,8 @@ document.getElementById("orderForm").addEventListener("submit",event=>{
  ];
  items.forEach(p=>lines.push("• "+p.name+" — "+p.quantity+" नग/पॅक"));
  lines.push("","कृपया उपलब्धता, प्रमाणानुसार किंमत आणि पुरवठ्याची माहिती कळवा.");
- window.open("https://wa.me/"+SHOP_WHATSAPP+"?text="+encodeURIComponent(lines.join("\\n")),"_blank","noopener,noreferrer");
+ window.open("https://wa.me/"+SHOP_WHATSAPP+"?text="+encodeURIComponent(lines.join("\n")),"_blank","noopener,noreferrer");
 });
 </script>
 </body>
-</html>
+  </html>
